@@ -4,153 +4,130 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>DiziQuote | Inspiring Quotes, Beautifully Delivered</title>
+<title>DiziQuote | Inspire, Create & Share Quotes</title>
 
-<!-- SEO -->
-<meta name="description" content="DiziQuote is a colorful and inspiring quotes platform with secure sign-in and community-driven content.">
-<meta name="author" content="DiziQuote">
-<meta name="robots" content="index, follow">
+<meta name="description" content="DiziQuote — A vibrant quotes app with daily inspiration, secure login, and community sharing. Download now on Google Play.">
+<meta name="author" content="Tekno Efsun">
 
 <style>
-/* =====================
-   GLOBAL STYLES
-===================== */
+/* GLOBAL RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-html {
-  scroll-behavior: smooth;
-}
-
+html { scroll-behavior: smooth; }
 body {
   font-family: "Segoe UI", Arial, sans-serif;
-  background: linear-gradient(135deg, #0a2540, #3a0ca3);
-  color: #ffffff;
+  background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+  color: white;
   line-height: 1.6;
 }
 
-/* =====================
-   COLOR VARIABLES
-===================== */
+/* COLOR VARIABLES */
 :root {
-  --blue: #0a2540;
-  --teal: #2ec4b6;
-  --purple: #7209b7;
-  --card-bg: rgba(255, 255, 255, 0.08);
+  --blue: #0d47a1;
+  --teal: #00bcd4;
+  --purple: #9c27b0;
+  --card-bg: rgba(255,255,255,0.1);
 }
 
-/* =====================
-   HEADER
-===================== */
+/* HEADER */
 header {
-  padding: 3rem 1.5rem;
   text-align: center;
+  padding: 3rem 1rem;
+  background: linear-gradient(45deg, var(--blue), var(--purple));
 }
-
 header h1 {
-  font-size: 3rem;
+  font-size: 3.2rem;
   color: var(--teal);
 }
-
 header p {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  margin-top: 0.5rem;
   opacity: 0.9;
 }
 
-/* =====================
-   HERO
-===================== */
+/* HERO */
 .hero {
-  padding: 3rem 1.5rem;
+  padding: 2.8rem 1.5rem;
   text-align: center;
 }
-
 .hero h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  font-size: 2.2rem;
 }
-
 .hero p {
+  margin: 1rem auto 1.8rem auto;
   max-width: 700px;
-  margin: auto;
-  margin-bottom: 2rem;
 }
-
-.hero a {
+.hero a.download-btn {
   display: inline-block;
-  padding: 0.9rem 2rem;
-  background: var(--purple);
-  color: #ffffff;
-  font-weight: 600;
-  border-radius: 30px;
-  transition: 0.3s ease;
-}
-
-.hero a:hover {
+  padding: 1rem 2rem;
   background: var(--teal);
   color: var(--blue);
+  font-weight: bold;
+  border-radius: 30px;
+  text-transform: uppercase;
+  transition: 0.3s ease;
+}
+.hero a.download-btn:hover {
+  background: var(--purple);
+  color: white;
 }
 
-/* =====================
-   FEATURES
-===================== */
+/* FEATURES */
 section {
   padding: 3rem 1.5rem;
 }
-
 .features {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   max-width: 1000px;
   margin: auto;
 }
-
 .feature {
   background: var(--card-bg);
-  border-radius: 12px;
   padding: 1.5rem;
-  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  text-align: center;
+}
+.feature h3 { color: var(--teal); margin-bottom: 0.6rem; }
+
+/* PREVIEW */
+.app-preview {
+  text-align: center;
+}
+.app-preview img {
+  width: 90%;
+  max-width: 350px;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
-.feature h3 {
-  color: var(--teal);
-  margin-bottom: 0.5rem;
-}
-
-/* =====================
-   PRIVACY
-===================== */
+/* PRIVACY */
 .privacy {
   max-width: 900px;
   margin: auto;
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255,255,255,0.1);
   padding: 2rem;
-  border-radius: 12px;
+  border-radius: 10px;
 }
-
 .privacy a {
   color: var(--teal);
   font-weight: 600;
+  text-decoration: underline;
 }
 
-/* =====================
-   FOOTER
-===================== */
+/* FOOTER */
 footer {
   text-align: center;
-  padding: 2rem 1rem;
-  background: #050b1a;
+  padding: 1.8rem 1rem;
+  background: var(--blue);
   font-size: 0.9rem;
 }
-
-footer a {
-  color: var(--teal);
-  font-weight: 600;
-}
+footer a { color: var(--teal); font-weight: 600; text-decoration: underline; }
 </style>
 </head>
 
@@ -158,52 +135,59 @@ footer a {
 
 <header>
   <h1>DiziQuote</h1>
-  <p>Thought-provoking quotes in a beautifully crafted experience</p>
+  <p>Daily Inspiration. Powerful Quotes. Your Voice.</p>
 </header>
 
 <section class="hero">
-  <h2>Where Words Inspire Emotion</h2>
+  <h2>Welcome to DiziQuote</h2>
   <p>
-    DiziQuote brings together meaningful quotes, secure authentication,
-    and a vibrant interface designed for modern users.
+    DiziQuote is a vibrant quotes platform and Flutter mobile app that brings
+    meaningful words and creative expression together. Read, create,
+    and share quotes that inspire you every day.
   </p>
-  <a href="#features">Explore Features</a>
+  <!-- Update `YOUR_APP_ID` to your actual Play Store package name -->
+  <a href="https://play.google.com/store/apps/details?id=com.teknoefsun.ayesha" class="download-btn" target="_blank">
+    Download on Google Play
+  </a>
 </section>
 
 <section id="features">
+  <h2 style="text-align:center; margin-bottom:1.5rem;">App Features</h2>
   <div class="features">
     <div class="feature">
-      <h3>Daily Inspiration</h3>
-      <p>Fresh and curated quotes delivered with elegance and simplicity.</p>
+      <h3>📅 Daily Quotes</h3>
+      <p>Receive a new inspirational quote every day to elevate your mindset.</p>
     </div>
-
     <div class="feature">
-      <h3>Secure Authentication</h3>
-      <p>Google Sign-In powered by Firebase for a safe user experience.</p>
+      <h3>🔐 Secure Login</h3>
+      <p>Sign in securely with Google Authentication via Firebase.</p>
     </div>
-
     <div class="feature">
-      <h3>Publish Quotes</h3>
-      <p>Share your thoughts and creativity with the DiziQuote community.</p>
+      <h3>📝 Publish Quotes</h3>
+      <p>Add your own original quotes and share with the DiziQuote community.</p>
     </div>
-
     <div class="feature">
-      <h3>Modern Design</h3>
-      <p>A clean, colorful UI using blue, teal, and purple aesthetics.</p>
+      <h3>🎨 Beautiful UI</h3>
+      <p>Experience a clean, colorful interface designed for inspiration.</p>
     </div>
   </div>
+</section>
+
+<section class="app-preview">
+  <h2>Preview</h2>
+  <img src="app-screenshot-1.png" alt="DiziQuote app screenshot">
+  <p style="opacity:0.8;">Visual interface showcasing quotes, categories, and interactive features.</p>
 </section>
 
 <section class="privacy">
   <h2>Privacy Policy</h2>
   <p>
-    DiziQuote values your privacy and is committed to protecting your data.
-    Read our complete Privacy Policy here:
+    Your privacy matters. Learn how DiziQuote collects and protects your data:
   </p>
   <p>
     👉
-    <a href="https://aysecs11.github.io/teknoefsun/root/TeknoEfsun/dq-privacypolicy.html" target="_blank" rel="noopener">
-      View Privacy Policy
+    <a href="https://aysecs11.github.io/teknoefsun/root/TeknoEfsun/dq-privacypolicy.html" target="_blank">
+      View Full Privacy Policy
     </a>
   </p>
 </section>
