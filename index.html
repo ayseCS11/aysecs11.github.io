@@ -1,108 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>DiziQuote – Quotes That Inspire</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DiziQuote — Colorful Quote Experience</title>
 
-    <!-- Google OAuth verification friendly meta -->
-    <meta name="description" content="DiziQuote is a Flutter-based quotes app offering inspirational, motivational, and thoughtful quotes.">
+<!-- Favicon -->
+<link rel="icon" href="favicon.ico" type="image/x-icon">
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f7f7f7;
-            color: #333;
-        }
+<style>
+  /* Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
 
-        header {
-            background-color: #222;
-            color: white;
-            padding: 30px 20px;
-            text-align: center;
-        }
+  /* Typography */
+  body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+  }
+  h1, h2, h3 {
+    font-weight: 700;
+  }
+  p {
+    margin-bottom: 1rem;
+  }
 
-        section {
-            padding: 30px 20px;
-            max-width: 800px;
-            margin: auto;
-            background: white;
-        }
+  /* Colors — Diziquote Thematic */
+  :root {
+    --primary: #6C5B7B;
+    --secondary: #355C7D;
+    --accent: #F67280;
+    --bg-light: #F8B195;
+    --text-dark: #2C3E50;
+    --white: #FFFFFF;
+  }
 
-        h1, h2 {
-            color: #222;
-        }
+  body {
+    background: var(--bg-light);
+    color: var(--text-dark);
+  }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 14px;
-            background-color: #eee;
-        }
+  a {
+    text-decoration: none;
+    color: var(--accent);
+  }
+  a:hover {
+    color: var(--primary);
+  }
 
-        a {
-            color: #0066cc;
-            text-decoration: none;
-        }
+  /* Header */
+  header {
+    background: var(--primary);
+    color: var(--white);
+    padding: 2rem;
+    text-align: center;
+  }
+  header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  header p {
+    font-size: 1.25rem;
+  }
 
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+  /* Hero */
+  .hero {
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+
+  .hero button {
+    padding: 1rem 2rem;
+    background: var(--accent);
+    border: none;
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+  }
+  .hero button:hover {
+    background: var(--secondary);
+  }
+
+  /* Sections */
+  section {
+    padding: 3rem 2rem;
+  }
+  .features {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .feature-card {
+    flex: 1 1 250px;
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+
+  /* Footer */
+  footer {
+    background: var(--secondary);
+    color: var(--white);
+    text-align: center;
+    padding: 1.5rem;
+  }
+  footer a {
+    color: var(--white);
+    font-weight: 700;
+  }
+
+  /* Privacy Policy */
+  #privacy {
+    background: var(--white);
+    color: var(--text-dark);
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 2rem auto;
+    max-width: 800px;
+  }
+</style>
+
 </head>
+
 <body>
 
+<!-- Header -->
 <header>
-    <h1>DiziQuote</h1>
-    <p>Quotes that inspire, motivate, and uplift</p>
+  <h1>DiziQuote</h1>
+  <p>Color Your Thoughts — Discover Quotes That Speak to You.</p>
 </header>
 
-<section>
-    <h2>About DiziQuote</h2>
-
-    <p>
-        DiziQuote is a mobile application built using Flutter that provides a collection
-        of inspirational, motivational, and meaningful quotes.
-    </p>
-
-    <p>
-        Users can browse quotes, share them, and optionally sign in using Google
-        to access personalized features.
-    </p>
-
-    <h2>Authentication</h2>
-
-    <p>
-        DiziQuote uses Google Sign-In through Firebase Authentication.
-        Users sign in securely using their own Google accounts.
-    </p>
-
-    <h2>Privacy & Policies</h2>
-
-    <ul>
-        <li>
-            <a href="dq-privacypolicy.html">Privacy Policy</a>
-        </li>
-        <li>
-            <a href="index.html">Terms of Service</a>
-        </li>
-    </ul>
-
-    <h2>Contact</h2>
-
-    <p>
-        If you have any questions or concerns, please contact us at:
-    </p>
-
-    <p>
-        <strong>Email:</strong> teknoefsun@gmail.com
-    </p>
+<!-- Hero -->
+<section class="hero">
+  <h2>Welcome to the Most Beautiful Quotes Experience</h2>
+  <p>Mobile-ready, interactive, and designed with passion.</p>
+  <button onclick="location.href='#features'">Explore Features</button>
 </section>
 
+<!-- Features -->
+<section id="features">
+  <h2 style="text-align:center; margin-bottom:1.5rem;">Key Features</h2>
+  <div class="features">
+    <div class="feature-card">
+      <h3>✨ Daily Quotes</h3>
+      <p>Fresh content every day to inspire your journey.</p>
+    </div>
+    <div class="feature-card">
+      <h3>🔐 Secure Sign-In</h3>
+      <p>Google Authentication with Firestore integration.</p>
+    </div>
+    <div class="feature-card">
+      <h3>📝 Publish Your Quote</h3>
+      <p>Add your own quotes and share with others worldwide.</p>
+    </div>
+    <div class="feature-card">
+      <h3>🎨 Beautiful UI</h3>
+      <p>Designed with vibrant colors and clean layout.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Privacy Policy -->
+<section id="privacy">
+  <h2>Privacy Policy</h2>
+  <!-- INSERT YOUR FULL PRIVACY POLICY HERE -->
+  <p>This Privacy Policy governs the manner in which DiziQuote collects, uses, maintains and discloses information collected from users.</p>
+  <p>[Your full policy content goes here. Replace this placeholder with the text you copied from your external policy.]</p>
+</section>
+
+<!-- Footer -->
 <footer>
-    <p>© 2026 DiziQuote. All rights reserved.</p>
+  <p>&copy; 2026 DiziQuote. All Rights Reserved.</p>
+  <p><a href="#privacy">Privacy Policy</a></p>
 </footer>
 
 </body>
