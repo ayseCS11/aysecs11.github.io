@@ -3,203 +3,98 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>DiziQuote | Inspire, Create & Share Quotes</title>
-
 <meta name="description" content="DiziQuote — A vibrant quotes app with daily inspiration, secure login, and community sharing. Download now on Google Play.">
-<meta name="author" content="Tekno Efsun">
-
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Animate on Scroll library -->
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <style>
-/* GLOBAL RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-html { scroll-behavior: smooth; }
-body {
-  font-family: "Segoe UI", Arial, sans-serif;
-  background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
-  color: white;
-  line-height: 1.6;
-}
-
-/* COLOR VARIABLES */
-:root {
-  --blue: #0d47a1;
-  --teal: #00bcd4;
-  --purple: #9c27b0;
-  --card-bg: rgba(255,255,255,0.1);
-}
-
-/* HEADER */
-header {
-  text-align: center;
-  padding: 3rem 1rem;
-  background: linear-gradient(45deg, var(--blue), var(--purple));
-}
-header h1 {
-  font-size: 3.2rem;
-  color: var(--teal);
-}
-header p {
-  font-size: 1.3rem;
-  margin-top: 0.5rem;
-  opacity: 0.9;
-}
-
-/* HERO */
-.hero {
-  padding: 2.8rem 1.5rem;
-  text-align: center;
-}
-.hero h2 {
-  font-size: 2.2rem;
-}
-.hero p {
-  margin: 1rem auto 1.8rem auto;
-  max-width: 700px;
-}
-.hero a.download-btn {
-  display: inline-block;
-  padding: 1rem 2rem;
-  background: var(--teal);
-  color: var(--blue);
-  font-weight: bold;
-  border-radius: 30px;
-  text-transform: uppercase;
-  transition: 0.3s ease;
-}
-.hero a.download-btn:hover {
-  background: var(--purple);
-  color: white;
-}
-
-/* FEATURES */
-section {
-  padding: 3rem 1.5rem;
-}
-.features {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  max-width: 1000px;
-  margin: auto;
-}
-.feature {
-  background: var(--card-bg);
-  padding: 1.5rem;
-  border-radius: 12px;
-  backdrop-filter: blur(8px);
-  text-align: center;
-}
-.feature h3 { color: var(--teal); margin-bottom: 0.6rem; }
-
-/* PREVIEW */
-.app-preview {
-  text-align: center;
-}
-.app-preview img {
-  width: 90%;
-  max-width: 350px;
-  border-radius: 18px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-}
-
-/* PRIVACY */
-.privacy {
-  max-width: 900px;
-  margin: auto;
-  background: rgba(255,255,255,0.1);
-  padding: 2rem;
-  border-radius: 10px;
-}
-.privacy a {
-  color: var(--teal);
-  font-weight: 600;
-  text-decoration: underline;
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 1.8rem 1rem;
-  background: var(--blue);
-  font-size: 0.9rem;
-}
-footer a { color: var(--teal); font-weight: 600; text-decoration: underline; }
+  /* Custom gradient backgrounds for hero and sections */
+  .gradient-bg {
+    background: linear-gradient(135deg, #0d47a1, #00bcd4, #9c27b0);
+  }
+  .card-bg {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(8px);
+  }
 </style>
 </head>
+<body class="font-sans text-white">
 
-<body>
-
-<header>
-  <h1>DiziQuote</h1>
-  <p>Daily Inspiration. Powerful Quotes. Your Voice.</p>
+<!-- Header -->
+<header class="text-center py-20 gradient-bg">
+  <h1 class="text-5xl font-bold text-teal-400 mb-4">DiziQuote</h1>
+  <p class="text-xl opacity-90 max-w-xl mx-auto">Daily Inspiration. Powerful Quotes. Your Voice.</p>
 </header>
 
-<section class="hero">
-  <h2>Welcome to DiziQuote</h2>
-  <p>
-    DiziQuote is a vibrant quotes platform and Flutter mobile app that brings
-    meaningful words and creative expression together. Read, create,
-    and share quotes that inspire you every day.
+<!-- Hero Section -->
+<section class="text-center py-16 px-4">
+  <h2 class="text-3xl font-bold mb-4" data-aos="fade-up">Welcome to DiziQuote</h2>
+  <p class="max-w-2xl mx-auto mb-8" data-aos="fade-up" data-aos-delay="200">
+    DiziQuote is a vibrant quotes platform and mobile app that brings meaningful words and creative expression together. Read, create, and share quotes that inspire you every day.
   </p>
-  <!-- Update `YOUR_APP_ID` to your actual Play Store package name -->
-  <a href="https://play.google.com/store/apps/details?id=com.teknoefsun.ayesha" class="download-btn" target="_blank">
+  <a href="https://play.google.com/store/apps/details?id=com.teknoefsun.ayesha" target="_blank" class="inline-block bg-teal-400 hover:bg-purple-600 text-blue-900 font-bold py-3 px-8 rounded-full transition duration-300" data-aos="zoom-in" data-aos-delay="400">
     Download on Google Play
   </a>
 </section>
 
-<section id="features">
-  <h2 style="text-align:center; margin-bottom:1.5rem;">App Features</h2>
-  <div class="features">
-    <div class="feature">
-      <h3>📅 Daily Quotes</h3>
+<!-- Features Section -->
+<section class="py-20 px-4 bg-white bg-opacity-10">
+  <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">App Features</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+    <div class="card-bg p-6 rounded-xl shadow-lg text-center" data-aos="fade-up" data-aos-delay="100">
+      <h3 class="text-teal-400 text-2xl font-semibold mb-2">📅 Daily Quotes</h3>
       <p>Receive a new inspirational quote every day to elevate your mindset.</p>
     </div>
-    <div class="feature">
-      <h3>🔐 Secure Login</h3>
+    <div class="card-bg p-6 rounded-xl shadow-lg text-center" data-aos="fade-up" data-aos-delay="200">
+      <h3 class="text-teal-400 text-2xl font-semibold mb-2">🔐 Secure Login</h3>
       <p>Sign in securely with Google Authentication via Firebase.</p>
     </div>
-    <div class="feature">
-      <h3>📝 Publish Quotes</h3>
+    <div class="card-bg p-6 rounded-xl shadow-lg text-center" data-aos="fade-up" data-aos-delay="300">
+      <h3 class="text-teal-400 text-2xl font-semibold mb-2">📝 Publish Quotes</h3>
       <p>Add your own original quotes and share with the DiziQuote community.</p>
     </div>
-    <div class="feature">
-      <h3>🎨 Beautiful UI</h3>
+    <div class="card-bg p-6 rounded-xl shadow-lg text-center" data-aos="fade-up" data-aos-delay="400">
+      <h3 class="text-teal-400 text-2xl font-semibold mb-2">🎨 Beautiful UI</h3>
       <p>Experience a clean, colorful interface designed for inspiration.</p>
     </div>
   </div>
 </section>
 
-<section class="app-preview">
-  <h2>Preview</h2>
-  <img src="app-screenshot-1.png" alt="DiziQuote app screenshot">
-  <p style="opacity:0.8;">Visual interface showcasing quotes, categories, and interactive features.</p>
+<!-- App Preview -->
+<section class="py-20 text-center px-4">
+  <h2 class="text-4xl font-bold mb-8" data-aos="fade-up">App Preview</h2>
+  <img src="app-screenshot-1.png" alt="DiziQuote App Screenshot" class="w-80 mx-auto rounded-3xl shadow-2xl mb-4" data-aos="zoom-in">
+  <p class="opacity-80 max-w-xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+    Explore quotes, categories, and interactive features in a vibrant interface.
+  </p>
 </section>
 
-<section class="privacy">
-  <h2>Privacy Policy</h2>
-  <p>
+<!-- Privacy Policy -->
+<section class="py-16 px-4 bg-white bg-opacity-10 text-center max-w-3xl mx-auto rounded-xl">
+  <h2 class="text-3xl font-bold mb-4" data-aos="fade-up">Privacy Policy</h2>
+  <p class="mb-4" data-aos="fade-up" data-aos-delay="100">
     Your privacy matters. Learn how DiziQuote collects and protects your data:
   </p>
-  <p>
-    👉
-    <a href="https://aysecs11.github.io/teknoefsun/root/TeknoEfsun/dq-privacypolicy.html" target="_blank">
-      View Full Privacy Policy
-    </a>
-  </p>
+  <a href="https://aysecs11.github.io/teknoefsun/root/TeknoEfsun/dq-privacypolicy.html" target="_blank" class="text-teal-400 font-semibold underline" data-aos="fade-up" data-aos-delay="200">
+    View Full Privacy Policy
+  </a>
 </section>
 
-<footer>
+<!-- Footer -->
+<footer class="py-8 text-center bg-blue-900">
   <p>© 2026 DiziQuote. All rights reserved.</p>
   <p>
-    <a href="https://aysecs11.github.io/teknoefsun/root/TeknoEfsun/dq-privacypolicy.html" target="_blank">
-      Privacy Policy
-    </a>
+    <a href="https://aysecs11.github.io/teknoefsun/root/TeknoEfsun/dq-privacypolicy.html" target="_blank" class="text-teal-400 underline">Privacy Policy</a>
   </p>
 </footer>
+
+<!-- Initialize AOS animations -->
+<script>
+  AOS.init({ duration: 800, once: true });
+</script>
 
 </body>
 </html>
