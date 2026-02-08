@@ -6,69 +6,72 @@
   <title>DiziQuote - Collect the Story</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* Basic Reset */
+    /* Reset & Basics */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Playfair Display', serif; background: #1e334b; color: #ffffff; }
+    body { font-family: 'Playfair Display', serif; background: #1e334b; color: #ffffff; overflow-x: hidden; transition: background 0.5s, color 0.5s; }
 
-    /* Container */
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    /* Light/Dark Mode Toggle */
+    .mode-toggle { position: fixed; top: 20px; right: 20px; cursor: pointer; background: #ff6347; padding: 10px 15px; border-radius: 30px; color: #fff; z-index: 1000; transition: transform 0.3s; }
+    .mode-toggle:hover { transform: scale(1.1); }
 
     /* Header */
-    header { text-align: center; padding: 100px 20px; background: linear-gradient(135deg, #1e334b 0%, #162436 100%); }
-    header h1 { font-size: 3em; margin-bottom: 20px; }
+    header { text-align: center; padding: 120px 20px; background: linear-gradient(-45deg, #1e334b, #162436, #1e334b, #162436); background-size: 400% 400%; animation: gradientBG 15s ease infinite; }
+    @keyframes gradientBG { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+    header h1 { font-size: 3.5em; margin-bottom: 20px; }
     header p { font-size: 1.3em; margin-bottom: 40px; color: #d1d1d1; }
-    .cta-btn { background: #ff6347; color: white; padding: 15px 35px; font-size: 1.1em; border: none; border-radius: 50px; cursor: pointer; transition: transform 0.3s; text-decoration: none; }
+    .cta-btn { background: #ff6347; color: white; padding: 15px 40px; font-size: 1.2em; border: none; border-radius: 50px; cursor: pointer; transition: transform 0.3s; text-decoration: none; }
     .cta-btn:hover { transform: scale(1.1); }
 
+    /* Sections */
+    section { padding: 80px 20px; }
+    section h2 { font-size: 2.8em; margin-bottom: 50px; text-align: center; }
+    .container { max-width: 1200px; margin: 0 auto; }
+
     /* Features */
-    section.features { padding: 80px 20px; text-align: center; }
-    section.features h2 { font-size: 2.5em; margin-bottom: 50px; }
-    .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-    .feature { background: rgba(255,255,255,0.05); padding: 30px; border-radius: 20px; transition: transform 0.3s; }
-    .feature:hover { transform: translateY(-10px); }
-    .feature h3 { margin-bottom: 15px; font-size: 1.5em; color: #ffb347; }
+    .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; text-align: center; }
+    .feature { background: rgba(255,255,255,0.05); padding: 35px; border-radius: 25px; transition: transform 0.3s, box-shadow 0.3s; }
+    .feature:hover { transform: translateY(-10px); box-shadow: 0 10px 25px rgba(0,0,0,0.4); }
+    .feature h3 { margin-bottom: 20px; font-size: 1.5em; color: #ffb347; }
     .feature p { font-size: 1em; color: #ccc; line-height: 1.6; }
 
     /* Screenshots */
-    section.screenshots { padding: 80px 20px; text-align: center; background: #162436; }
-    section.screenshots h2 { font-size: 2.5em; margin-bottom: 50px; }
     .screenshots-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-    .screenshots-grid img { width: 100%; border-radius: 20px; transition: transform 0.3s; }
-    .screenshots-grid img:hover { transform: scale(1.05); }
+    .screenshots-grid img { width: 100%; border-radius: 25px; transition: transform 0.4s, box-shadow 0.4s; }
+    .screenshots-grid img:hover { transform: scale(1.05); box-shadow: 0 15px 30px rgba(0,0,0,0.5); }
 
     /* Description */
-    section.description { padding: 80px 20px; max-width: 1000px; margin: 0 auto; text-align: center; }
-    section.description h2 { font-size: 2.5em; margin-bottom: 30px; }
-    section.description p { color: #ccc; font-size: 1.1em; line-height: 1.8; }
+    section.description p { color: #ccc; font-size: 1.1em; line-height: 1.8; max-width: 900px; margin: 0 auto 20px; text-align: center; }
 
     /* Testimonials */
-    section.testimonials { padding: 80px 20px; background: #1a2a3b; text-align: center; }
-    section.testimonials h2 { font-size: 2.5em; margin-bottom: 50px; }
-    .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-    .testimonial { background: rgba(255,255,255,0.05); padding: 30px; border-radius: 20px; }
-    .testimonial p { font-size: 1em; color: #ccc; margin-bottom: 15px; }
+    .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; text-align: center; }
+    .testimonial { background: rgba(255,255,255,0.05); padding: 30px; border-radius: 25px; transition: transform 0.3s; }
+    .testimonial:hover { transform: translateY(-10px); }
+    .testimonial p { font-size: 1em; color: #ccc; margin-bottom: 15px; font-style: italic; }
     .testimonial span { font-weight: bold; color: #ffb347; }
 
     /* Footer */
-    footer { padding: 40px 20px; text-align: center; background: #111c2b; }
+    footer { padding: 60px 20px; text-align: center; background: #111c2b; }
     footer p { margin-bottom: 15px; color: #aaa; }
     footer .socials a { margin: 0 10px; color: #ffb347; font-size: 1.5em; transition: transform 0.3s; text-decoration: none; }
     footer .socials a:hover { transform: scale(1.2); }
+    footer .privacy a { color: #ff6347; text-decoration: none; }
+    footer .privacy a:hover { text-decoration: underline; }
 
     /* Animations */
     .fade-in { opacity: 0; transform: translateY(30px); animation: fadeInUp 1s forwards; }
-    @keyframes fadeInUp {
-      to { opacity: 1; transform: translateY(0); }
-    }
+    @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
 <body>
 
+  <!-- Light/Dark Mode Toggle -->
+  <div class="mode-toggle" onclick="toggleMode()">Toggle Light/Dark</div>
+
   <!-- Header -->
   <header>
-    <h1>DiziQuote</h1>
-    <p>Do not just watch the story, collect it!</p>
+    <h1 class="fade-in">DiziQuote</h1>
+    <p class="fade-in">Do not just watch the story, collect it!</p>
     <a href="https://play.google.com/store/apps/details?id=com.teknoefsun.ayesha" class="cta-btn fade-in">Download on Play Store</a>
   </header>
 
@@ -139,18 +142,31 @@
       <a href="https://www.facebook.com/teknoefsun" target="_blank">Facebook</a>
       <a href="https://www.tiktok.com/@teknoefsun" target="_blank">TikTok</a>
     </div>
+    <div class="privacy">
+      <p><a href="https://aysecs11.github.io/teknoefsun/root/TeknoEfsun/dq-privacypolicy.html" target="_blank">Privacy Policy</a></p>
+    </div>
     <p>&copy; 2026 DiziQuote. All rights reserved.</p>
   </footer>
 
   <script>
-    // Simple fade-in on scroll
+    // Fade-in on scroll
     const faders = document.querySelectorAll('.fade-in');
     const appearOptions = { threshold: 0.3, rootMargin: "0px 0px -50px 0px" };
     const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
       entries.forEach(entry => { if(entry.isIntersecting){ entry.target.style.animationPlayState = 'running'; } });
     }, appearOptions);
     faders.forEach(fader => { appearOnScroll.observe(fader); });
-  </script>
 
+    // Light/Dark Mode
+    function toggleMode(){
+      if(document.body.style.background === "white"){
+        document.body.style.background = "#1e334b";
+        document.body.style.color = "#fff";
+      } else {
+        document.body.style.background = "#ffffff";
+        document.body.style.color = "#1e334b";
+      }
+    }
+  </script>
 </body>
 </html>
