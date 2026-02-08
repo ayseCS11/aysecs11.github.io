@@ -1,103 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DiziQuote | Inspire, Create & Share Quotes</title>
-<meta name="description" content="DiziQuote — A vibrant quotes app with daily inspiration, secure login, and community sharing. Download now on Google Play.">
-<!-- Tailwind CSS CDN -->
-<script src="https://cdn.tailwindcss.com"></script>
-<!-- Animate on Scroll library -->
-<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<style>
-  /* Custom gradient backgrounds for hero and sections */
-  .gradient-bg {
-    background: linear-gradient(135deg, #0d47a1, #00bcd4, #9c27b0);
-  }
-  .card-bg {
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(8px);
-  }
-  p {
-  color: #0d1b3c; /* Navy Blue */
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DiziQuote - Collect the Story</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Basic Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Playfair Display', serif; background: #1e334b; color: #ffffff; }
+
+    /* Container */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+    /* Header */
+    header { text-align: center; padding: 100px 20px; background: linear-gradient(135deg, #1e334b 0%, #162436 100%); }
+    header h1 { font-size: 3em; margin-bottom: 20px; }
+    header p { font-size: 1.3em; margin-bottom: 40px; color: #d1d1d1; }
+    .cta-btn { background: #ff6347; color: white; padding: 15px 35px; font-size: 1.1em; border: none; border-radius: 50px; cursor: pointer; transition: transform 0.3s; text-decoration: none; }
+    .cta-btn:hover { transform: scale(1.1); }
+
+    /* Features */
+    section.features { padding: 80px 20px; text-align: center; }
+    section.features h2 { font-size: 2.5em; margin-bottom: 50px; }
+    .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+    .feature { background: rgba(255,255,255,0.05); padding: 30px; border-radius: 20px; transition: transform 0.3s; }
+    .feature:hover { transform: translateY(-10px); }
+    .feature h3 { margin-bottom: 15px; font-size: 1.5em; color: #ffb347; }
+    .feature p { font-size: 1em; color: #ccc; line-height: 1.6; }
+
+    /* Screenshots */
+    section.screenshots { padding: 80px 20px; text-align: center; background: #162436; }
+    section.screenshots h2 { font-size: 2.5em; margin-bottom: 50px; }
+    .screenshots-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+    .screenshots-grid img { width: 100%; border-radius: 20px; transition: transform 0.3s; }
+    .screenshots-grid img:hover { transform: scale(1.05); }
+
+    /* Description */
+    section.description { padding: 80px 20px; max-width: 1000px; margin: 0 auto; text-align: center; }
+    section.description h2 { font-size: 2.5em; margin-bottom: 30px; }
+    section.description p { color: #ccc; font-size: 1.1em; line-height: 1.8; }
+
+    /* Testimonials */
+    section.testimonials { padding: 80px 20px; background: #1a2a3b; text-align: center; }
+    section.testimonials h2 { font-size: 2.5em; margin-bottom: 50px; }
+    .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+    .testimonial { background: rgba(255,255,255,0.05); padding: 30px; border-radius: 20px; }
+    .testimonial p { font-size: 1em; color: #ccc; margin-bottom: 15px; }
+    .testimonial span { font-weight: bold; color: #ffb347; }
+
+    /* Footer */
+    footer { padding: 40px 20px; text-align: center; background: #111c2b; }
+    footer p { margin-bottom: 15px; color: #aaa; }
+    footer .socials a { margin: 0 10px; color: #ffb347; font-size: 1.5em; transition: transform 0.3s; text-decoration: none; }
+    footer .socials a:hover { transform: scale(1.2); }
+
+    /* Animations */
+    .fade-in { opacity: 0; transform: translateY(30px); animation: fadeInUp 1s forwards; }
+    @keyframes fadeInUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
-<body class="font-sans text-white">
+<body>
 
-<!-- Header -->
-<header class="text-center py-20 gradient-bg">
-  <h1 class="text-5xl font-bold text-teal-400 mb-4">DiziQuote</h1>
-  <p class="text-xl opacity-90 max-w-xl mx-auto">Daily Inspiration. Powerful Quotes. Your Voice.</p>
-</header>
+  <!-- Header -->
+  <header>
+    <h1>DiziQuote</h1>
+    <p>Do not just watch the story, collect it!</p>
+    <a href="https://play.google.com/store/apps/details?id=com.teknoefsun.ayesha" class="cta-btn fade-in">Download on Play Store</a>
+  </header>
 
-<!-- Hero Section -->
-<section class="text-center py-16 px-4">
-  <h2 class="text-3xl font-bold mb-4" data-aos="fade-up">Welcome to DiziQuote</h2>
-  <p class="max-w-2xl mx-auto mb-8" data-aos="fade-up" data-aos-delay="200">
-    DiziQuote is a vibrant quotes platform and mobile app that brings meaningful words and creative expression together. Read, create, and share quotes that inspire you every day.
-  </p>
-  <a href="https://play.google.com/store/apps/details?id=com.teknoefsun.ayesha" target="_blank" class="inline-block bg-teal-400 hover:bg-purple-600 text-blue-900 font-bold py-3 px-8 rounded-full transition duration-300" data-aos="zoom-in" data-aos-delay="400">
-    Download on Google Play
-  </a>
-</section>
-
-<!-- Features Section -->
-<section class="py-20 px-4 bg-white bg-opacity-10">
-  <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">App Features</h2>
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-    <div class="card-bg p-6 rounded-xl shadow-lg text-center" data-aos="fade-up" data-aos-delay="100">
-      <h3 class="text-teal-400 text-2xl font-semibold mb-2">📅 Daily Quotes</h3>
-      <p>Receive a new inspirational quote every day to elevate your mindset.</p>
+  <!-- Features -->
+  <section class="features container">
+    <h2 class="fade-in">Key Features</h2>
+    <div class="feature-grid">
+      <div class="feature fade-in">
+        <h3>Daily Quotes</h3>
+        <p>Receive a new inspirational quote every day to elevate your mindset.</p>
+      </div>
+      <div class="feature fade-in">
+        <h3>Secure Login</h3>
+        <p>Sign in securely with Google Authentication via Firebase.</p>
+      </div>
+      <div class="feature fade-in">
+        <h3>Publish Quotes</h3>
+        <p>Add your own original quotes and share with the DiziQuote community.</p>
+      </div>
+      <div class="feature fade-in">
+        <h3>Beautiful UI</h3>
+        <p>Experience a clean, colorful interface designed for inspiration. Add to Favourite Quotes.</p>
+      </div>
     </div>
-    <div class="card-bg p-6 rounded-xl shadow-lg text-center" data-aos="fade-up" data-aos-delay="200">
-      <h3 class="text-teal-400 text-2xl font-semibold mb-2">🔐 Secure Login</h3>
-      <p>Sign in securely with Google Authentication via Firebase.</p>
+  </section>
+
+  <!-- Screenshots -->
+  <section class="screenshots container">
+    <h2 class="fade-in">Screenshots</h2>
+    <div class="screenshots-grid fade-in">
+      <img src="https://play-lh.googleusercontent.com/qq2tysUOkNWnVB712MfUs7tz4ChW-b0qisRqsjU1rWchHZy2EL1MVyuf9n0673sodCuYV_bQDUrnsQOVh8crvw=w5120-h2880-rw" alt="Screenshot 1">
+      <img src="https://play-lh.googleusercontent.com/odwBJD8nU4atjzCx3CPqM0asJXPzj0c0hYZe0QzpDQe8dVEk1pJ3SuPf3fdSK_oM6DRXlI4plqO7lxjE0W_emw=w5120-h2880-rw" alt="Screenshot 2">
+      <img src="https://play-lh.googleusercontent.com/4kfH-KqxBQw47wQT3-74P8SE497_XH3WapO2bXObTpiYCEHarXy7aEPLmmWVR_ymRPvDkYGKW9ygdwBTBq-paYg=w5120-h2880-rw" alt="Screenshot 3">
+      <img src="https://play-lh.googleusercontent.com/aVpvL_rMHFJ46ytdL1YE0fg99CH4t68aJVs4tRyAsTRBUUoQE76eEMhO87P74-vQkrp1uAQI1ODB4n1m5wSB-A=w5120-h2880-rw" alt="Screenshot 4">
     </div>
-    <div class="card-bg p-6 rounded-xl shadow-lg text-center" data-aos="fade-up" data-aos-delay="300">
-      <h3 class="text-teal-400 text-2xl font-semibold mb-2">📝 Publish Quotes</h3>
-      <p>Add your own original quotes and share with the DiziQuote community.</p>
+  </section>
+
+  <!-- Description -->
+  <section class="description container fade-in">
+    <h2>About DiziQuote</h2>
+    <p>DiziQuote is a Turkish series quotes app created for fans of Turkish dramas (Diziler) who love emotional, romantic, motivational, and meaningful dialogues from popular TV series.</p>
+    <p>Explore the most memorable Turkish drama quotes, beautifully translated and presented in multiple languages so you can enjoy them in your preferred language.</p>
+    <p>⭐ Key Features: Multi-language support, favorite quotes, share quotes, light & dark mode, minimal UI, fast & lightweight.</p>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials container">
+    <h2 class="fade-in">What Users Say</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial fade-in"><p>"Harika bir uygulama, dizilerden en güzel replikleri burada bulabiliyorum!"</p><span>– Ahmet, Turkey</span></div>
+      <div class="testimonial fade-in"><p>"Love how I can read quotes in English and Turkish. Amazing!"</p><span>– Elif, Turkey</span></div>
+      <div class="testimonial fade-in"><p>"Inspirational and simple UI. My favorite quotes app."</p><span>– Kerem, Turkey</span></div>
+      <div class="testimonial fade-in"><p>"Perfect for Turkish drama fans. Highly recommend!"</p><span>– Leyla, Turkey</span></div>
+      <div class="testimonial fade-in"><p>"Sharing quotes on WhatsApp is so easy!"</p><span>– Murat, Turkey</span></div>
+      <div class="testimonial fade-in"><p>"The multi-language feature is very useful."</p><span>– Ayşe, Turkey</span></div>
+      <div class="testimonial fade-in"><p>"Daily quotes motivate me every morning."</p><span>– Can, Turkey</span></div>
+      <div class="testimonial fade-in"><p>"Beautifully designed and lightweight app."</p><span>– Zeynep, Turkey</span></div>
+      <div class="testimonial fade-in"><p>"I love saving my favorite quotes."</p><span>– Emre, Turkey</span></div>
+      <div class="testimonial fade-in"><p>"Fast, easy, and full of amazing quotes."</p><span>– Hande, Turkey</span></div>
     </div>
-    <div class="card-bg p-6 rounded-xl shadow-lg text-center" data-aos="fade-up" data-aos-delay="400">
-      <h3 class="text-teal-400 text-2xl font-semibold mb-2">🎨 Beautiful UI</h3>
-      <p>Experience a clean, colorful interface designed for inspiration.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Developed by: Tekno Efsun (SMC-Private) Limited.</p>
+    <div class="socials">
+      <a href="https://www.instagram.com/teknoefsun" target="_blank">Instagram</a>
+      <a href="https://www.facebook.com/teknoefsun" target="_blank">Facebook</a>
+      <a href="https://www.tiktok.com/@teknoefsun" target="_blank">TikTok</a>
     </div>
-  </div>
-</section>
+    <p>&copy; 2026 DiziQuote. All rights reserved.</p>
+  </footer>
 
-<!-- App Preview -->
-<section class="py-20 text-center px-4">
-  <h2 class="text-4xl font-bold mb-8" data-aos="fade-up">App Preview</h2>
-  <img src="https://play-lh.googleusercontent.com/qq2tysUOkNWnVB712MfUs7tz4ChW-b0qisRqsjU1rWchHZy2EL1MVyuf9n0673sodCuYV_bQDUrnsQOVh8crvw=w5120-h2880-rw" alt="DiziQuote App Screenshot" class="w-80 mx-auto rounded-3xl shadow-2xl mb-4" data-aos="zoom-in">
-  <p class="opacity-80 max-w-xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-    Explore quotes, categories, and interactive features in a vibrant interface.
-  </p>
-</section>
-
-<!-- Privacy Policy -->
-<section class="py-16 px-4 bg-white bg-opacity-10 text-center max-w-3xl mx-auto rounded-xl">
-  <h2 class="text-3xl font-bold mb-4" data-aos="fade-up">Privacy Policy</h2>
-  <p class="mb-4" data-aos="fade-up" data-aos-delay="100">
-    Your privacy matters. Learn how DiziQuote collects and protects your data:
-  </p>
-  <a href="https://aysecs11.github.io/teknoefsun/root/TeknoEfsun/dq-privacypolicy.html" target="_blank" class="text-teal-400 font-semibold underline" data-aos="fade-up" data-aos-delay="200">
-    View Full Privacy Policy
-  </a>
-</section>
-
-<!-- Footer -->
-<footer class="py-8 text-center bg-blue-900">
-  <p>© 2026 DiziQuote. All rights reserved.</p>
-  <p>
-    <a href="https://aysecs11.github.io/teknoefsun/root/TeknoEfsun/dq-privacypolicy.html" target="_blank" class="text-teal-400 underline">Privacy Policy</a>
-  </p>
-</footer>
-
-<!-- Initialize AOS animations -->
-<script>
-  AOS.init({ duration: 800, once: true });
-</script>
+  <script>
+    // Simple fade-in on scroll
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.3, rootMargin: "0px 0px -50px 0px" };
+    const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
+      entries.forEach(entry => { if(entry.isIntersecting){ entry.target.style.animationPlayState = 'running'; } });
+    }, appearOptions);
+    faders.forEach(fader => { appearOnScroll.observe(fader); });
+  </script>
 
 </body>
 </html>
