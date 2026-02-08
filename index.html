@@ -5,9 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DiziQuote - Collect the Story</title>
   <!-- Poppins font -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     /* Reset & Basics */
+    .footer-section img {
+  display: block;
+  margin: 0 auto 15px auto;
+  max-width: 150px;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.footer-section img:hover {
+  transform: scale(1.05);
+}
+
+    .socials a {
+  margin: 0 10px;
+  color: #00d4ff; /* teal accent */
+  font-size: 1.8em;
+  transition: transform 0.3s, color 0.3s;
+  text-decoration: none;
+}
+
+.socials a:hover {
+  transform: scale(1.2);
+  color: #007c91; /* darker teal on hover */
+}
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body { font-family: 'Poppins', sans-serif; background: #f0f8ff; color: #102a4f; overflow-x: hidden; transition: background 0.5s, color 0.5s; }
@@ -75,7 +102,7 @@
 
   <!-- Header -->
   <header>
-    <img src="https://drive.google.com/uc?export=view&id=1xQAJwBEqyxMtWScDKi4cZ6D3vioiyFmk" alt="DiziQuote Logo" class="fade-in">
+    <img src="https://drive.google.com/file/d/1xQAJwBEqyxMtWScDKi4cZ6D3vioiyFmk/view?usp=sharing" alt="DiziQuote Logo" class="fade-in">
     <h1 class="fade-in">DiziQuote</h1>
     <p class="fade-in">Do not just watch the story, collect it!</p>
     <a href="https://play.google.com/store/apps/details?id=com.teknoefsun.ayesha" class="cta-btn fade-in">Download on Play Store</a>
@@ -120,30 +147,46 @@
     <h2>About DiziQuote</h2>
     <p>DiziQuote is a Turkish series quotes app created for fans of Turkish dramas (Diziler) who love emotional, romantic, motivational, and meaningful dialogues from popular TV series.</p>
     <p>Explore the most memorable Turkish drama quotes, beautifully translated and presented in multiple languages so you can enjoy them in your preferred language.</p>
-    <p>⭐ Key Features: Multi-language support, favorite quotes, share quotes, light & dark mode, minimal UI, fast & lightweight.</p>
+    <p>Key Features: Multi-language support, favorite quotes, share quotes, light & dark mode, minimal UI, fast & lightweight.</p>
   </section>
 
   <!-- Testimonials -->
-  <section class="testimonials container">
-    <h2 class="fade-in">What Users Say</h2>
-    <div class="testimonial-grid">
-      <div class="testimonial fade-in"><p>"Harika bir uygulama, dizilerden en güzel replikleri burada bulabiliyorum!"</p><span>– Ahmet, Turkey</span></div>
-      <div class="testimonial fade-in"><p>"Love how I can read quotes in English and Turkish. Amazing!"</p><span>– Elif, Turkey</span></div>
-      <div class="testimonial fade-in"><p>"Inspirational and simple UI. My favorite quotes app."</p><span>– Kerem, Turkey</span></div>
-      <div class="testimonial fade-in"><p>"Perfect for Turkish drama fans. Highly recommend!"</p><span>– Leyla, Turkey</span></div>
-      <div class="testimonial fade-in"><p>"Sharing quotes on WhatsApp is so easy!"</p><span>– Murat, Turkey</span></div>
-      <div class="testimonial fade-in"><p>"The multi-language feature is very useful."</p><span>– Ayşe, Turkey</span></div>
-      <div class="testimonial fade-in"><p>"Daily quotes motivate me every morning."</p><span>– Can, Turkey</span></div>
-      <div class="testimonial fade-in"><p>"Beautifully designed and lightweight app."</p><span>– Zeynep, Turkey</span></div>
-      <div class="testimonial fade-in"><p>"I love saving my favorite quotes."</p><span>– Emre, Turkey</span></div>
-      <div class="testimonial fade-in"><p>"Fast, easy, and full of amazing quotes."</p><span>– Hande, Turkey</span></div>
-    </div>
-  </section>
+  <div class="testimonial-grid">
+  <!-- Turkish Drama Fans -->
+  <div class="testimonial fade-in"><p>"Harika bir uygulama! Yargı dizisinden en güzel replikleri burada bulabiliyorum."</p><span>– Ahmet, Turkey</span></div>
+  <div class="testimonial fade-in"><p>"Çukur dizisinin repliklerini okumak çok keyifli. Multi-language desteği mükemmel."</p><span>– Leyla, Turkey</span></div>
+  <div class="testimonial fade-in"><p>"İçerde dizisinin unutulmaz sözlerini tekrar tekrar okuyorum. Harika app!"</p><span>– Kerem, Turkey</span></div>
+  <div class="testimonial fade-in"><p>"Üç Kuruş dizisinden favori alıntılarımı kaydedebiliyorum ve paylaşabiliyorum."</p><span>– Zeynep, Turkey</span></div>
+  <div class="testimonial fade-in"><p>"Yargı ve Çukur replikleriyle motivasyon alıyorum. Her gün açıyorum."</p><span>– Murat, Turkey</span></div>
+  <div class="testimonial fade-in"><p>"İçerde dizisinin dramatik sahnelerini hatırlamak çok keyifli."</p><span>– Emre, Turkey</span></div>
+  <div class="testimonial fade-in"><p>"Üç Kuruş ve Çukur fanıyım. Quotes app gerçekten harika."</p><span>– Hande, Turkey</span></div>
+
+  <!-- English-speaking Users -->
+  <div class="testimonial fade-in"><p>"I love reading quotes from Yargı and Çukur in English. Very inspiring!"</p><span>– Emily, USA</span></div>
+  <div class="testimonial fade-in"><p>"This app helps me understand Turkish dramas like İçerde. Amazing translations."</p><span>– John, UK</span></div>
+  <div class="testimonial fade-in"><p>"Üç Kuruş quotes in English are perfectly translated. Great app!"</p><span>– Sarah, Canada</span></div>
+
+  <!-- Urdu-speaking Users -->
+  <div class="testimonial fade-in"><p>"Yargı aur Çukur ke quotes Urdu mein parh kar bohot acha lagta hai."</p><span>– Aisha, Pakistan</span></div>
+  <div class="testimonial fade-in"><p>"Favorite quotes save karna aur share karna bohot easy hai."</p><span>– Hassan, Pakistan</span></div>
+
+  <!-- Arabic-speaking Users -->
+  <div class="testimonial fade-in"><p>"I love reading İçerde quotes in Arabic. Very meaningful."</p><span>– Ahmed, Egypt</span></div>
+  <div class="testimonial fade-in"><p>"Üç Kuruş dialogues in Arabic help me enjoy the drama even more!"</p><span>– Layla, UAE</span></div>
+
+  <!-- Mixed & Motivational -->
+  <div class="testimonial fade-in"><p>"Daily quotes from all my favorite Turkish dramas keep me inspired."</p><span>– Can, Turkey</span></div>
+  <div class="testimonial fade-in"><p>"Fast, lightweight, and beautifully designed. My favorite app for Turkish series quotes."</p><span>– Sophie, UK</span></div>
+  <div class="testimonial fade-in"><p>"Quotes from Çukur and Yargı are exactly what I needed for motivation."</p><span>– Zeynep, Turkey</span></div>
+  <div class="testimonial fade-in"><p>"I save my favorite quotes and read them daily. Very well done!"</p><span>– Emre, Turkey</span></div>
+  <div class="testimonial fade-in"><p>"Perfect for fans of İçerde and Üç Kuruş. Love it!"</p><span>– Leyla, Turkey</span></div>
+</div>
 
   <!-- Footer -->
   <footer>
     <div class="footer-container">
       <div class="footer-section">
+        <img src="https://scontent.fskt12-1.fna.fbcdn.net/v/t39.30808-6/559280377_815229317546148_2271862279803512628_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=S8ynA4KOiVgQ7kNvwErV13G&_nc_oc=AdkYfK-uDLA2VobemsTjmcbnu6cTcMS5Ets7HRnJetju5fsHTSGksczL0v2h_4VTmZ5bnnVC1qB5woJQFL8rKFd5&_nc_zt=23&_nc_ht=scontent.fskt12-1.fna&_nc_gid=aSE50exJjq_SgxMZCKrGgQ&oh=00_AfsiJ8zEztKn3nz4uhepy7e1uOL4zrVTDTmZCmr6TuCD1Q&oe=698E8DB6" alt="Tekno Efsun Logo" style="width: 120px; margin-bottom: 15px; border-radius: 10px;">
         <h4>Tekno Efsun</h4>
         <p>Developed by Tekno Efsun (SMC-Private) Limited. Specializing in mobile apps & digital solutions.</p>
       </div>
@@ -155,9 +198,13 @@
       <div class="footer-section">
         <h4>Follow Us</h4>
         <div class="socials">
-          <a href="https://www.instagram.com/teknoefsun" target="_blank">Instagram</a>
-          <a href="https://www.facebook.com/teknoefsun" target="_blank">Facebook</a>
-          <a href="https://www.tiktok.com/@teknoefsun" target="_blank">TikTok</a>
+          <div class="socials">
+  <a href="https://www.instagram.com/teknoefsun" target="_blank" title="Instagram">
+    <i class="fab fa-instagram"></i>  </a>
+  <a href="https://www.facebook.com/teknoefsun" target="_blank" title="Facebook">
+    <i class="fab fa-facebook-f"></i>  </a>
+  <a href="https://www.tiktok.com/@tekno.efsun" target="_blank" title="TikTok">
+    <i class="fab fa-tiktok"></i>  </a>
         </div>
       </div>
     </div>
