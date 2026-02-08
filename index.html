@@ -4,59 +4,60 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DiziQuote - Collect the Story</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Poppins font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     /* Reset & Basics */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Playfair Display', serif; background: #0c1f3f; color: #ffffff; overflow-x: hidden; transition: background 0.5s, color 0.5s; }
+    body { font-family: 'Poppins', sans-serif; background: #0b1c34; color: #e0f7fa; overflow-x: hidden; transition: background 0.5s, color 0.5s; }
 
     /* Light/Dark Mode Toggle */
-    .mode-toggle { position: fixed; top: 20px; right: 20px; cursor: pointer; background: #00c8ff; padding: 10px 15px; border-radius: 30px; color: #0c1f3f; z-index: 1000; transition: transform 0.3s; }
+    .mode-toggle { position: fixed; top: 20px; right: 20px; cursor: pointer; background: #00d4ff; padding: 10px 15px; border-radius: 30px; color: #0b1c34; z-index: 1000; transition: transform 0.3s; font-weight: 600; }
     .mode-toggle:hover { transform: scale(1.1); }
 
     /* Header */
-    header { text-align: center; padding: 120px 20px; background: linear-gradient(-45deg, #1e3c72, #2a5298, #00c8ff, #1e3c72); background-size: 400% 400%; animation: gradientBG 15s ease infinite; border-bottom-left-radius: 50px; border-bottom-right-radius: 50px; }
+    header { text-align: center; padding: 120px 20px; background: linear-gradient(-45deg, #1a2a6c, #1f4e79, #00d4ff, #1a2a6c); background-size: 400% 400%; animation: gradientBG 15s ease infinite; border-bottom-left-radius: 50px; border-bottom-right-radius: 50px; }
     @keyframes gradientBG { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
     header img { width: 120px; margin-bottom: 20px; border-radius: 20px; }
-    header h1 { font-size: 3.5em; margin-bottom: 20px; }
-    header p { font-size: 1.3em; margin-bottom: 40px; color: #d1faff; }
-    .cta-btn { background: #00c8ff; color: #0c1f3f; padding: 15px 40px; font-size: 1.2em; border: none; border-radius: 50px; cursor: pointer; transition: transform 0.3s; text-decoration: none; }
+    header h1 { font-size: 3.5em; margin-bottom: 20px; font-weight: 700; color: #e0f7fa; }
+    header p { font-size: 1.3em; margin-bottom: 40px; color: #b2ebf2; }
+    .cta-btn { background: #00d4ff; color: #0b1c34; padding: 15px 40px; font-size: 1.2em; border: none; border-radius: 50px; cursor: pointer; transition: transform 0.3s; text-decoration: none; font-weight: 600; }
     .cta-btn:hover { transform: scale(1.1); }
 
     /* Sections */
     section { padding: 80px 20px; }
-    section h2 { font-size: 2.8em; margin-bottom: 50px; text-align: center; color: #c0eafc; }
+    section h2 { font-size: 2.8em; margin-bottom: 50px; text-align: center; color: #b2ebf2; }
     .container { max-width: 1200px; margin: 0 auto; }
 
     /* Features */
     .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; text-align: center; }
-    .feature { background: rgba(0,200,255,0.1); padding: 35px; border-radius: 25px; transition: transform 0.3s, box-shadow 0.3s; }
-    .feature:hover { transform: translateY(-10px); box-shadow: 0 10px 25px rgba(0,200,255,0.3); }
-    .feature h3 { margin-bottom: 20px; font-size: 1.5em; color: #00f0ff; }
-    .feature p { font-size: 1em; color: #e0f7ff; line-height: 1.6; }
+    .feature { background: rgba(0,212,255,0.08); padding: 35px; border-radius: 25px; transition: transform 0.3s, box-shadow 0.3s; }
+    .feature:hover { transform: translateY(-10px); box-shadow: 0 10px 25px rgba(0,212,255,0.25); }
+    .feature h3 { margin-bottom: 20px; font-size: 1.5em; color: #00d4ff; font-weight: 600; }
+    .feature p { font-size: 1em; color: #b2ebf2; line-height: 1.6; }
 
     /* Screenshots */
     .screenshots-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
     .screenshots-grid img { width: 100%; border-radius: 25px; transition: transform 0.4s, box-shadow 0.4s; }
-    .screenshots-grid img:hover { transform: scale(1.05); box-shadow: 0 15px 30px rgba(0,200,255,0.4); }
+    .screenshots-grid img:hover { transform: scale(1.05); box-shadow: 0 15px 30px rgba(0,212,255,0.3); }
 
     /* Description */
-    section.description p { color: #c0eafc; font-size: 1.1em; line-height: 1.8; max-width: 900px; margin: 0 auto 20px; text-align: center; }
+    section.description p { color: #b2ebf2; font-size: 1.1em; line-height: 1.8; max-width: 900px; margin: 0 auto 20px; text-align: center; }
 
     /* Testimonials */
     .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; text-align: center; }
-    .testimonial { background: rgba(0,200,255,0.1); padding: 30px; border-radius: 25px; transition: transform 0.3s; }
+    .testimonial { background: rgba(0,212,255,0.08); padding: 30px; border-radius: 25px; transition: transform 0.3s; }
     .testimonial:hover { transform: translateY(-10px); }
-    .testimonial p { font-size: 1em; color: #e0f7ff; margin-bottom: 15px; font-style: italic; }
-    .testimonial span { font-weight: bold; color: #00f0ff; }
+    .testimonial p { font-size: 1em; color: #b2ebf2; margin-bottom: 15px; font-style: italic; }
+    .testimonial span { font-weight: 600; color: #00d4ff; }
 
     /* Footer */
-    footer { padding: 60px 20px; text-align: center; background: #0b1c34; }
+    footer { padding: 60px 20px; text-align: center; background: #0a1a2e; }
     footer p { margin-bottom: 15px; color: #99dfff; }
-    footer .socials a { margin: 0 10px; color: #00c8ff; font-size: 1.5em; transition: transform 0.3s; text-decoration: none; }
+    footer .socials a { margin: 0 10px; color: #00d4ff; font-size: 1.5em; transition: transform 0.3s; text-decoration: none; }
     footer .socials a:hover { transform: scale(1.2); }
-    footer .privacy a { color: #00f0ff; text-decoration: none; }
+    footer .privacy a { color: #00d4ff; text-decoration: none; }
     footer .privacy a:hover { text-decoration: underline; }
 
     /* Animations */
@@ -162,11 +163,11 @@
     // Light/Dark Mode
     function toggleMode(){
       if(document.body.style.background === "white"){
-        document.body.style.background = "#0c1f3f";
-        document.body.style.color = "#ffffff";
+        document.body.style.background = "#0b1c34";
+        document.body.style.color = "#e0f7fa";
       } else {
         document.body.style.background = "#ffffff";
-        document.body.style.color = "#0c1f3f";
+        document.body.style.color = "#0b1c34";
       }
     }
   </script>
